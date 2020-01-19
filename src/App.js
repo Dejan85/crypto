@@ -1,26 +1,53 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./scss/App.scss";
 
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+//components
+import Header from "./components/layout/header/Header";
+import Home from "./components/layout/home/Home";
+import Profile from "./components/layout/profile/Profile";
+
+// hooks
+import useWebsocket from "./components/hooks/useWebsocket";
+
 function App() {
-  const ws = new WebSocket("wss://api-pub.bitfinex.com/ws/2");
+  const {
+    getData,
+    btcUsd,
+    ethUsd,
+    eosUsd,
+    btcEur,
+    ethEur,
+    eosEur
+  } = useWebsocket();
 
-  ws.onopen = () => {
-    ws.send(
-      JSON.stringify({
-        event: "subscribe",
-        channel: "ticker",
-        pair: "ETHUSD"
-      })
-    );
-  };
+  useEffect(() => {
+    getData();
+  }, [getData]);
 
-  ws.onmessage = msg => {
-    const res = JSON.parse(msg.data);
-
-    console.log(res[1] && res);
-  };
-
-  return <div className="App">xad</div>;
+  return (
+    <div className="App">
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Home
+              btcUsd={btcUsd}
+              ethUsd={ethUsd}
+              eosUsd={eosUsd}
+              btcEur={btcEur}
+              ethEur={ethEur}
+              eosEur={eosEur}
+            />
+          </Route>
+          <Route exact path="/profile">
+            <Profile />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
+  );
 }
 
 export default App;

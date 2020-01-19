@@ -31,3 +31,10 @@ html {
 body {
   box-sizing: border-box;
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}

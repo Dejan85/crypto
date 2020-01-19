@@ -1,0 +1,39 @@
+.home {
+  font-size: 2rem;
+  font-family: $font-1;
+
+  &__table {
+    width: 100%;
+    margin: 5rem 0 0 0;
+    border: 1px solid $table-border-color;
+  }
+
+  &__thead {
+    color: $text-color;
+
+    &--tr {
+    }
+
+    &--th {
+      font-weight: 700;
+
+      &:first-child {
+      }
+    }
+  }
+
+  &__tbody {
+    &--tr {
+      font-weight: 400;
+    }
+
+    &--td {
+      font-size: 1.8rem;
+      color: lighten($text-color, 20%);
+      &:first-child {
+        font-weight: 700;
+        color: $text-color;
+      }
+    }
+  }
+}

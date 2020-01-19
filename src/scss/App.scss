@@ -8,5 +8,11 @@
 @import "./components/base/base";
 
 // LAYOUT
+@import "./components/layout/header/header";
+@import "./components/layout/home/home";
+@import "./components/layout/profile/profile";
 
 // TYPOGRAPFY
+@import "./components/typogprafy/header/headerTypogprafy";
+@import "./components/typogprafy/home/homeTypograpfy";
+@import "./components/typogprafy/profile/profileTypogprafy";

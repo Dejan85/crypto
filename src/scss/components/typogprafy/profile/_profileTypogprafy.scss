@@ -1,0 +1,16 @@
+.profile {
+  font-family: $font-1;
+
+  &__span {
+    font-size: 2rem;
+    color: $text-color;
+  }
+  &__p {
+    font-size: 2rem;
+    color: lighten($text-color, 50%);
+  }
+
+  &__btn {
+    color: white;
+  }
+}
