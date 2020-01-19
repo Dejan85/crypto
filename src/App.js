@@ -9,9 +9,12 @@ import Home from "./components/layout/home/Home";
 import Profile from "./components/layout/profile/Profile";
 
 // hooks
+import usePrivateRoute from "./components/hooks/usePrivateRoute";
 import useWebsocket from "./components/hooks/useWebsocket";
 
 function App() {
+  const { PrivateRoute } = usePrivateRoute();
+
   const {
     getData,
     btcUsd,
@@ -41,9 +44,7 @@ function App() {
               eosEur={eosEur}
             />
           </Route>
-          <Route exact path="/profile">
-            <Profile />
-          </Route>
+          <PrivateRoute exact path="/profile" component={Profile} />
         </Switch>
       </Router>
     </div>

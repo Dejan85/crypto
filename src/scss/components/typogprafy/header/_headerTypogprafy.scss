@@ -7,11 +7,19 @@
   }
   &__ul {
     a {
-      color: white;
+      color: $color-gray;
       font-size: 2rem;
       font-family: $font-1;
       font-weight: 600;
       text-decoration: none;
     }
+  }
+
+  &__login {
+    color: white;
+    font-size: 2rem;
+    font-family: $font-1;
+    font-weight: 600;
+    text-decoration: none;
   }
 }
