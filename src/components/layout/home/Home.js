@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import Tr from "./Tr";
 
 const Home = ({ btcUsd, ethUsd, eosUsd, btcEur, ethEur, eosEur }) => {
-  //   console.log(btcUsd);
+  console.log(ethUsd);
 
   return (
     <div className="home">

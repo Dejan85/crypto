@@ -7,7 +7,7 @@ const Tr = ({ data, id, name }) => {
       <td className="home__tbody--td">{id}</td>
       <td className="home__tbody--td">{name}</td>
       <td className="home__tbody--td">{data && data[4].toFixed(1)}</td>
-      <td className="home__tbody--td">{data && data[3]}</td>
+      <td className="home__tbody--td">{data && data[8]}</td>
       <td className="home__tbody--td">{data && data[2]}</td>
     </tr>
   );
