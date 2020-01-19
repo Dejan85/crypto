@@ -1,4 +1,5 @@
 import React from "react";
+import "./scss/App.scss";
 
 function App() {
   const ws = new WebSocket("wss://api-pub.bitfinex.com/ws/2");
@@ -7,7 +8,7 @@ function App() {
     ws.send(
       JSON.stringify({
         event: "subscribe",
-        channel: "trades",
+        channel: "ticker",
         pair: "ETHUSD"
       })
     );
