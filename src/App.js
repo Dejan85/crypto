@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const ws = new WebSocket("wss://api-pub.bitfinex.com/ws/2");
+
+  ws.onopen = () => {
+    ws.send(
+      JSON.stringify({
+        event: "subscribe",
+        channel: "trades",
+        pair: "ETHUSD"
+      })
+    );
+  };
+
+  ws.onmessage = msg => {
+    const res = JSON.parse(msg.data);
+
+    console.log(res[1] && res);
+  };
+
+  return <div className="App">xad</div>;
 }
 
 export default App;
