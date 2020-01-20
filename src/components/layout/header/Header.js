@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
+// hooks
+import useAuthenticate from "../../hooks/useAutthenticate";
+
 const Header = () => {
-  const [signIn, setSignIn] = useState(window.localStorage.getItem("user"));
+  const [signIn, setSignIn] = useState("");
+  const { isAuthenticated } = useAuthenticate();
 
   const login = () => {
     window.localStorage.setItem("user", true);
-    setSignIn(window.localStorage.getItem("user"));
+    setSignIn("success");
   };
 
   return (
@@ -18,7 +22,7 @@ const Header = () => {
             Home
           </NavLink>
         </li>
-        {signIn && (
+        {isAuthenticated() && (
           <li className="header__li">
             <NavLink
               exact={true}
@@ -29,7 +33,7 @@ const Header = () => {
             </NavLink>
           </li>
         )}
-        {!signIn && (
+        {!isAuthenticated() && (
           <li
             className="header__login"
             style={{ background: "#007afe" }}
