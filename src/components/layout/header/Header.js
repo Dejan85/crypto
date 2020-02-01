@@ -22,7 +22,7 @@ const Header = () => {
             Home
           </NavLink>
         </li>
-        {isAuthenticated() && (
+        {(isAuthenticated() && (
           <li className="header__li">
             <NavLink
               exact={true}
@@ -32,8 +32,7 @@ const Header = () => {
               Profile
             </NavLink>
           </li>
-        )}
-        {!isAuthenticated() && (
+        )) || (
           <li
             className="header__login"
             style={{ background: "#007afe" }}
