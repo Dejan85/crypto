@@ -13,10 +13,10 @@ const Tr = ({ data, id, name }) => {
   );
 };
 
-Tr.propTypes = {
-  data: PropTypes.array,
-  id: PropTypes.string,
-  name: PropTypes.string
-};
+// Tr.propTypes = {
+//   data: PropTypes.array,
+//   id: PropTypes.string,
+//   name: PropTypes.string
+// };
 
 export default Tr;

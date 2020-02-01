@@ -30,13 +30,13 @@ const Home = ({ btcUsd, ethUsd, eosUsd, btcEur, ethEur, eosEur }) => {
   );
 };
 
-Home.propTypes = {
-  btcUsd: PropTypes.array,
-  ethUsd: PropTypes.array,
-  eosUsd: PropTypes.array,
-  btcEur: PropTypes.array,
-  ethEur: PropTypes.array,
-  eosEur: PropTypes.array
-};
+// Home.propTypes = {
+//   btcUsd: PropTypes.string,
+//   ethUsd: PropTypes.string,
+//   eosUsd: PropTypes.string,
+//   btcEur: PropTypes.string,
+//   ethEur: PropTypes.string,
+//   eosEur: PropTypes.string
+// };
 
 export default Home;
