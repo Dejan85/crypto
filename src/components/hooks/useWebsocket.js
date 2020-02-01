@@ -2,14 +2,7 @@ import { useState, useReducer } from "react";
 const ws = new WebSocket("wss://api-pub.bitfinex.com/ws/2");
 const arr = [];
 
-const initialState = {
-  btcUsd: "",
-  ethUsd: "",
-  eosUsd: "",
-  btcEur: "",
-  ethEur: "",
-  eosEur: ""
-};
+const initialState = {};
 
 function reducer(state, action) {
   switch (action.type) {

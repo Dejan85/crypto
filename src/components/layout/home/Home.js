@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 import Tr from "./Tr";
 
 const Home = ({ btcUsd, ethUsd, eosUsd, btcEur, ethEur, eosEur }) => {
+  console.log(btcUsd);
+
   return (
     <div className="home">
       <table className="home__table">
@@ -30,13 +32,13 @@ const Home = ({ btcUsd, ethUsd, eosUsd, btcEur, ethEur, eosEur }) => {
   );
 };
 
-// Home.propTypes = {
-//   btcUsd: PropTypes.string,
-//   ethUsd: PropTypes.string,
-//   eosUsd: PropTypes.string,
-//   btcEur: PropTypes.string,
-//   ethEur: PropTypes.string,
-//   eosEur: PropTypes.string
-// };
+Home.propTypes = {
+  btcUsd: PropTypes.array,
+  ethUsd: PropTypes.array,
+  eosUsd: PropTypes.array,
+  btcEur: PropTypes.array,
+  ethEur: PropTypes.array,
+  eosEur: PropTypes.array
+};
 
 export default Home;
